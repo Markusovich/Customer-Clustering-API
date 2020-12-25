@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>New Customer</title> 
+{% endblock %}
+
+{% block body %}
+<h1>New Customer</h1>
+
+    <hr>
+    <h2>Add New Customer:</h2>
+    <form action='/customers' method='POST'>
+        <label for="name">Name:</label>
+        <input class="form-control" type="text" name='name' id='name' aria-label="Enter Name" required>
+        <br>
+        <label for="freq">Number Of Purchases:</label>
+        <input class="form-control" type="text" name='freq' id='freq' aria-label="Enter Number Of Purchases" required>
+        <br>
+        <label for="last">Days From Last Purchase:</label>
+        <input class="form-control" type="text" name='last' id='last' aria-label="Enter Days From Last Purchase" required>
+        <br>
+        <label for="first">Days From First Purchase:</label>
+        <input class="form-control" type="text" name='first' id='first' aria-label="Enter Days From First Purchase" required>
+        <br>
+        <label for="revenue">Total Revenue:</label>
+        <input class="form-control" type="text" name='revenue' id='revenue' aria-label="Enter Total Revenue" required>
+        <br>
+        <input type='submit' value='Submit'>
+    </form>
+    <hr>
+    <br>
+    <br>
+    <br>
+    <br>
+{% endblock %}

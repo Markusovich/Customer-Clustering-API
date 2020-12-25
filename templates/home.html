@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Home</title>
+{% endblock %}
+
+{% block body %}
+<br>
+<h1>Home Page</h1>
+<br>
+<main role="main">
+    <div class="jumbotron">
+        <div class="col-sm-8 mx-auto">
+            <h1>Welcome</h1>
+            <p>Here I created a service for customers to find the buyer category they belong to, 
+                based on their purchase frequency, number of days from last purchase, days from their first purchase, 
+                and total revenue.</p>
+            <p>
+                <a class="btn btn-primary" href="/customers" role="button">View Customers &raquo;</a>
+            </p>
+        </div>
+    </div>
+</main>
+{% endblock %}

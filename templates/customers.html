@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Posts</title> 
+{% endblock %}
+
+{% block body %}
+<br>
+<div>
+    <h1 style="display:inline">All Customers</h1>
+    <a style="display:inline" class="btn btn-success float-right" href="/customers/new" >+ Add New Customer</a>
+</div>
+    <hr>
+
+    {% for customer in customers %}
+        <h2>{{ customer.customerName }}</h2>
+        <small> Calculated on {{ customer.date_posted }}</small>
+        <br>
+        <br>
+        <p style="white-space:pre-wrap">Number Of Purchases: {{ customer.purchaseFreq }}</p>
+        <p style="white-space:pre-wrap">Days From Last Purchase: {{ customer.daysFromLast }}</p>
+        <p style="white-space:pre-wrap">Days From First Purchase: {{ customer.daysFromFirst }}</p>
+        <p style="white-space:pre-wrap">Total Revenue: {{ customer.totalRev }}</p>
+        <br>
+        <h5 style="white-space:pre-wrap" font='bold'>Category: {{ customer.clusterCategory }}</h5>
+        <br>
+        <a class="btn btn-primary" href='/customers/edit/{{customer.id}}'>Edit Customer</a>
+        <a class="btn btn-danger" href='/customers/delete/{{customer.id}}'>Delete Customer</a>
+        <br>
+        <hr>
+        <br>
+    {% endfor%}
+    <br>
+    <br>
+
+{% endblock %}
